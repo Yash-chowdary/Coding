@@ -1,0 +1,102 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner j=new Scanner(System.in);
+		int T=-1;
+		if(j.hasNext())
+		    T=j.nextInt();
+		if(T>=1 && T<=2000)
+		{
+		for(int i=0;i<T;i++)
+		{
+		    int N=-1;
+		    if(j.hasNext())
+		        N=j.nextInt();
+		    if(N>=2 && N<=8)
+		    {
+		    Integer[] a=new Integer[N];
+		    for(int k=0;k<N;k++)
+		    {
+		        a[k]=-1;
+		        if(j.hasNext())
+		            a[k]=j.nextInt();
+		            if(a[k]>=0 && a[k]<=10)
+		                continue;
+		            else
+		                break;
+		    }
+		    Integer[] l=new Integer[N];
+		    int q,t;
+		    int d1,d2;
+		    for(int r=0;r<N-1;r++)
+		    {
+		     l[r]=1;
+		     for(int p=r;p<N-1;p++)
+		     {
+		         q=p+1;
+	        	t=p-1;
+		        if(p==0)
+		        {
+		        d1=a[q]-a[p];
+		        if(d1<=2)
+		        {
+		             l[r]++;
+		         
+	            }
+	            else
+		        {
+		        
+		        p=N+0;
+		        }
+		        }
+		    else
+		    {
+		    d1=a[q]-a[p];
+		    d2=a[p]-a[t];
+		    if(d1<=2)
+		    {
+		             l[r]++;
+		         
+	        }
+	        else if(l[0]>1 && d1>2)
+	        {
+		            for(int v=0;v<p+1;v++)
+		            {
+		                l[v]=l[0]+0;
+		            }
+		            r=p+1;
+		            p=N+0;
+	        }
+	        else if(d1>2 && r>0)
+	        {
+	            if(d2<=2)
+	                l[r]++;
+	                
+	                p=N+0;
+	        }
+	        else
+	        {
+	            p=N+0;
+	            break;
+	        }
+		    }
+		   }
+		   }
+		   
+		    int min=Collections.min(Arrays.asList(l));
+		    int max=Collections.max(Arrays.asList(l));
+		    System.out.print(min+" "+max);
+		    System.out.println();
+		    }
+		}
+		}
+	}
+}
+

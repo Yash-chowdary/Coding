@@ -1,0 +1,37 @@
+			
+			import java.util.*;
+
+			Empty lists creation
+				ArrayList<Integer> arrli=new ArrayList<Integer>();
+				ArrayList<String> arrli=new ArrayList<String>();
+			Lists Initialising with size n
+				ArrayList<Integer> arrli=new ArrayList<Integer>(n);
+				ArrayList<String> arrli=new ArrayList<String>(n);
+			To print entire list elements with []
+				System.out.println(arrli);
+				Output:- [Steve, Tim, Lucy, Pat, Angela, Tom]
+			To print single element
+				System.out.print(arrli.get(1));
+				Output:- Tim
+			Operations using ArrayList
+				arrli.add("Raj");
+				arrli.add(1, "For"); //Adding in between elements
+				arrli.remove(Index); // Now list size decreases and index of elements after Index reduces by 1	
+				arrli.remove(new Integer(element)); // Removes that element (If list is of string then new String("element")
+				arrli.removeRange(From index ,To index);// "public class Main extends ArrayList<Integer>" 
+									then create object in method with name of list//(Since it is protected)
+				arrli.clear();
+				arrli.set(1, "Crazy"); // Replacement
+				arrli.set(i,arrli.get(i)-2); // Changing values of elements of index i
+				arrli.size(); // Length of arraylist
+				arrli.isEmpty();// Boolean value 
+				Collections.sort(arrli); //Sorting in ascending order
+				Collections.sort(arrli,Collections.reverseOrder()); // Sorting in descending order
+				Collections.max(arrli); Collections.min(arrli);
+		        **Conversion of array to ArrayList**
+				String[] array = {"a", "b", "c", "d", "e"};
+				Method 1--> List<String> list = Arrays.asList(array);		
+				Method 2--> List<String> arrli = new ArrayList<String>();
+      					    Collections.addAll(arrli, array);
+				
+				

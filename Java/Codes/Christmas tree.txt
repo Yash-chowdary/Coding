@@ -1,0 +1,89 @@
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t!=0)
+        {
+            t--;
+            int n=sc.nextInt();
+            int k=n-1;
+            int x=(2*n)+1;
+            int f=x+0;
+            if(n<=1)
+            {
+                System.out.println("You cannot generate christmas tree");
+            }
+            else if(n>20)
+                System.out.println("Tree is no more");
+            else{
+                for(int b=0;b<n-1;b++)
+                {
+                    if(b==0) {
+                        trian(x);
+                        x-=4;
+                    }
+                    else
+                    {
+                        brian(x,f);
+                        x-=2;
+                    }
+                }
+                stand(f);
+                stand(f);
+            }
+        }
+    }
+    public static void trian(int a)
+    {
+        for (int i=0; i<a; i+=2)
+        {
+            for (int j=((a-i)/2)+1; j>1; j--)
+            {
+
+                System.out.print(" ");
+            }
+            for (int j=0; j<=i; j++ )
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+    public static void brian(int z,int a)
+    {
+        for (int i=2; i<a; i+=2)
+        {
+            for (int j=((a-i)/2)+1; j>1; j--)
+            {
+                System.out.print(" ");
+            }
+            for (int j=0; j<=i; j++ )
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+            if(i>z)
+            {
+                break;
+            }
+
+        }
+    }
+    public static void stand(int a)
+    {
+        int i=0;
+        for (int j=((a-i)/2)+1; j>1; j--)
+        {
+            System.out.print(" ");
+        }
+        for (int j=0; j<=i; j++ )
+        {
+            System.out.print("*");
+        }
+        System.out.println();
+    }
+
+}

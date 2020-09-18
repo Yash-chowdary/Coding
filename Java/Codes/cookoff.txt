@@ -1,0 +1,106 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+		Scanner sc = new Scanner(System.in);
+		 int T = -1;
+		 if(sc.hasNext())
+		    T = sc.nextInt();    
+		 for (int x = 0; x < T; x++) {
+                int N = -1;
+                if(sc.hasNext())
+                {
+                    N = sc.nextInt();
+                }
+                int[] A=new int[N];
+                for(int i=0;i<N;i++)
+                {
+                    A[i]=sc.nextInt();
+                }
+                  int a=countFreq(A,N);
+                  int y=Max(A,N);
+                  if(a==0 || y==7)
+                  {
+                      System.out.println("NO");
+                  }
+                  else{
+                      System.out.println("YES");
+                  }
+                  
+		 }
+	}
+	public static int countFreq(int arr[], int n) 
+    {
+      int k=-1;
+      boolean visited[] = new boolean[n];
+    Arrays.fill(visited, false); 
+    int[] c=new int[arr.length];
+  int z=100000;
+    // Traverse through array elements and 
+    // count frequencies 
+    for (int i = 0; i < arr.length; i++) { 
+        // Skip this element if already processed 
+        if (visited[i] == true)
+        {
+            c[i]=z;
+            z++;
+            continue;
+        }
+        // Count frequency 
+        int count = 1; 
+        for (int j = i + 1; j < arr.length; j++) { 
+            if (arr[i] == arr[j]) { 
+                visited[j] = true; 
+                count++; 
+            }
+        } 
+        c[i]=count;
+    }
+    
+    for (int i = 0; i < c.length; i++)
+    { 
+        for (int j = i + 1 ; j < c.length; j++)
+        {
+            if (c[i]==c[j]) 
+            { 
+                k=0;
+                break;
+            }
+            
+        } 
+    }
+    return k;
+    }
+    public static int Max(int D[],int n)
+    {
+        int M=0;
+        for(int i=0;i<D.length-1;i++)
+        {
+            for(int j=0;j<D.length-1;j++)
+            {
+                for(int l=j+1;l<D.length;l++)
+                {
+                    if(D[j]==D[l])
+                    {
+                        if(l-j>1)
+                        {
+                            M=7;
+                            j=n-1;
+                        }
+                        else{
+                            j=l+0;
+                        }
+                    }
+                }
+            }
+            if(M>1)
+            {
+                break;
+            }
+        }
+        return M;
+    }
+}

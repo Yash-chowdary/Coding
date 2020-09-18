@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main {
+
+    public static void main(String[] args) {
+        // write your code here
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter variable(i) and length of array");
+        String a=sc.next();
+        int b=sc.nextInt();
+
+        System.out.print(("for(int ")+a);
+        System.out.print("="+0+";");
+        System.out.print(a+"<"+b+";"+a+"++"+")"+"{");
+        System.out.println();
+        System.out.print(" "+"["+a+"]"+"="+"sc.nextInt();");
+        System.out.println();
+        System.out.println("}");
+    }
+}

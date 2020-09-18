@@ -1,0 +1,40 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int p=sc.nextInt();
+		int t=sc.nextInt();
+		int a=sc.nextInt();
+		int[] w=new int[a];
+		int[] x=new int[a];
+		for(int i=0;i<a;i++)
+		{
+		    w[i]=sc.nextInt();
+		    x[i]=sc.nextInt();
+		}
+		int b=sc.nextInt();
+		int[] y=new int[b];
+		int[] z=new int[b];
+		for(int j=0;j<b;j++)
+		{
+		    y[j]=sc.nextInt();
+		    z[j]=sc.nextInt();
+		}
+		int A=0,B=0;
+		for(int l=0;l<a;l++)
+		{
+		    A+=w[l]*x[l];
+		}
+		for(int m=0;m<b;m++)
+		{
+		    B+=y[m]*z[m];
+		}
+		if(A>B)
+		{
+		    System.out.println("B");
+		}
+		else
+		    System.out.println("A");
+	}
+}

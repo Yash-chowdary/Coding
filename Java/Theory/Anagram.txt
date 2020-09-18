@@ -1,0 +1,88 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String x=sc.next();
+		String y=sc.next();
+		for(int k=0;k<x.length();k++)
+		{
+		    
+		    if(isAna(x,y))
+		    {
+		        System.out.println("It is an Ana");
+		        break;
+		    }
+		    else
+		    {
+		        x=rotate(x);
+		    }
+		    if(k==x.length()-1)
+		    {
+		        System.out.println("Not an ANA");
+		    }
+		}
+	}
+	public static boolean isAna(String s,String a)
+	{
+	    HashMap<Character,Integer>map=new HashMap<Character,Integer>();
+		for(int i=0;i<a.length();i++)
+		{
+		    char key=a.charAt(i);
+		    Integer value=map.get(key);
+		    if(value==null)
+		    {
+		        value=1;
+		    }
+		    else{
+		        value++;
+		    }
+		    map.put(key,value);
+		}
+		for(int j=0;j<(s.substring(0,a.length())).length();j++)
+		{
+		    char key2=s.charAt(j);
+		    Integer value2=map.get(key2);
+		    if(value2==null)
+		    {
+		        return false;
+		    }
+		    else if(value2==1)
+		    {
+		        map.remove(key2);
+		    }
+		    else
+		    {
+		        map.put(key2,value2-1);
+		    }
+		}
+		return true;
+	}
+	public static String rotate(String v)
+	{
+	    v=v.substring(1,v.length())+v.substring(0,1);
+	    return v;
+	}
+}
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		try{
+		    Scanner sc=new Scanner(System.in);
+		    int a=sc.nextInt();
+		    System.out.println(a);
+	}
+	catch(ArithmeticException e)
+	{
+	    System.out.println("Ar");
+	}
+	catch(InputMismatchException e)
+	{
+	    System.out.println("Invalid input");
+	}
+	}
+}

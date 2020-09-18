@@ -1,0 +1,56 @@
+import java.util.Scanner; 
+import java.util.*;
+import java.util.ArrayList;
+public class Main { 
+    public static void main(String args[]) 
+    { 
+          Scanner j=new Scanner(System.in);
+          int N=j.nextInt();
+          for(int i=0;i<N;i++)
+          {
+            int a=j.nextInt();
+		    String[] b=new String[a];
+		    for(int k=0;k<a;k++)
+		    {
+		        b[k]=j.next();
+		    }
+	    	ArrayList<String> m = new ArrayList<String>();
+		    for(int k=0;k<a;k++)
+		    {
+		        m.add(b[k]);
+		    }
+		    int c=0;
+		    c=m.indexOf("1");
+		        m.set(c,"0");
+		        int d=0;
+		        d=m.indexOf("1");
+		    if(d-c>=6)
+		    {
+		        while(d-c>=6)
+		        {
+		        c=m.indexOf("1");
+		        m.set(c,"0");
+		        d=0;
+		        d=m.indexOf("1");
+		            
+		            if(d==-1)
+		            {
+		                System.out.print("YES");
+		                break;
+		            }
+		            else
+		            {
+		                continue;
+		            }
+		        }
+		        
+		        System.out.print("NO");
+		    }
+		    else
+		    {
+		        System.out.print("NO"); 
+		    }
+		    
+          }
+    } 
+}  
