@@ -1,0 +1,33 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*; 
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        sc.nextLine();
+        String[] f=new String[n];
+        for(int i=0;i<n;i++){
+            f[i]=sc.nextLine();
+            String s[]=f[i].split(" ");
+            for(String x:s){
+                String h=rv(x);
+                System.out.print(h+" "); }
+            System.out.println("");
+        }
+    }
+    public static String rv(String d){
+        if(d.length()==1 || d.length()==2 || d.length()==3)
+            return d;
+        else{
+            String g=d.substring(1,d.length()-1);
+            StringBuilder rev = new StringBuilder();
+            rev.append(g);
+            rev = rev.reverse();
+            String j="";
+            j=d.substring(0,1)+rev+d.substring(d.length()-1,d.length());
+            return j;
+        }
+    }
+    
+}
