@@ -1,0 +1,41 @@
+
+HashMap-------------------------------------------------------------------------------------
+Package is: 
+import java.util.HashMap;
+	HashMap declaration:- 2 types
+			      i) HashMap<datatype1, datatype2> hm = new HashMap<datatype1, datatype2>();
+			      	     Ex:--  HashMap<Integer, String> hm = new HashMap<Integer, String>();
+			     ii) HashMap<datatype1, datatype2> hm = new HashMap();
+				     Ex:- Map<Integer, Integer> left = new HashMap(),count = new HashMap();
+--------------------------------------------------------------------------------------------
+	datatype1----> Key
+	datatype2----> Value
+--------------------------------------------------------------------------------------------
+	Operations using HashMap
+	--------------------------------------------------------------------------
+	hm.get(x); To know value of key x 
+	hm.put(x,k); To insert or change to certain value k to key x //ans=k
+	hm.put(x, hm.getOrDefault(x, 0) + 1); To add or sub something to the value
+	To access key elements:
+	for (int x: count.keySet()) 
+	{
+	  // Key=x
+             Value=count.get(x);
+        } // Here key is integer
+	hm.values(); // returns values
+	hm.containsKey(k); hm.containsValue(v); 
+	hm.clear();
+	hm.remove();
+	hm.size();
+	hm.isEmpty();
+	Copymap.putAll(hm); // Creates a copy of hm map by passing all elements
+	--------------------------------------------------------------------------
+	To copy elements of one map to another map:--
+	----------------------------------------------------------
+	public static <K, V> Map<K, V> copyMap(Map<K, V> original) 
+    	{
+        	return new HashMap<>(original); 
+    	} 
+			or
+	Copymap.putAll(hm);
+	----------------------------------------------------------
