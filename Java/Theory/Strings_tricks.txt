@@ -1,0 +1,3 @@
+	str = str.replaceAll("[^a-zA-Z0-9]", ""); // replace the given string with empty string except the pattern "[^a-zA-Z0-9]" or 
+						  // To remove Non-AlphaNumeric Characters
+	str=str.toLowerCase(); //To convert into lowercase

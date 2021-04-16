@@ -1,0 +1,15 @@
+*Final and static methods cannot be overridden
+*When a function is static, runtime polymorphism(Overriding) doesn’t happen
+*When a constructor with arguments of child class is called then it  calls super() 
+ If there is a constructor then it executes and then child class constructor arguments is executed
+ else compilation error
+ If there are any methods of parent constructor with arguments 
+ then we can call those methods using super(arg1, arg2,..) in child class constructor method
+ They get executed and error will not be generated
+*If we call super() in child class constructor and create a constructor then also super() is called only once
+*Call to super must be first statement in constructor
+*Although a final method cannot be overridden, in this case, the method is private, and therefore hidden. 
+ The effect is that a new, accessible, method flipper is created. 
+ Therefore, no polymorphism occurs in this example, the method invoked is simply that of the child class, and no error occurs.
+*Base b = new Derived();
+ Here if any base class method is called in Base() then it executes those overridden methods in Derived //21 in Inheritance pdf

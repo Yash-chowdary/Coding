@@ -1,0 +1,79 @@
+* A child class cannot be used as a reference to an object of super class.
+* Though Object class is super class of all classes it cannot be used as a reference to operate parent class methods.
+* The overriding method can not have more restrictive access modifier.
+
+
+
+
+* Protected methods are intended for sharing implementation with subclasses. 
+  Interfaces have nothing to offer as far as implementation sharing goes, 
+  because they have no implementation at all. 
+* Therefore all methods on interfaces must be public only if a class implements this interface
+* Abstract classes can also implement interface
+
+
+
+* float/0=Infinty
+  0/0 = NaN
+  -veDoubleValue/0= -Infinty
+  
+
+
+
+
+* The only case when the code inside finally block is not executed is when 
+  System.exit(0) is called explicitly in the program. 
+  Then exit statement is called and the program is terminated without executing any further
+
+
+
+
+
+* Exceptions can be thrown in catch clause. This is done in order to change the exception type at run time. 
+  Exceptions in catch clause are thrown by creating instances of class Throwable as shown in the program
+
+* Invoking start() method on a thread moves the thread to a RUNNABLE state. 
+  But invoking start() method on a thread that has already started throws a 
+  "IllegalThreadStateException" because the thread is already in RUNNABLE state.
+
+
+
+public class Main {
+public static void sum(int ...x)
+ {
+ int sum=0;
+ for(int n:x)
+ {
+ sum=sum+n;
+ }
+ System.out.print(sum+" ");
+ }
+public static void main(String[] args) {
+ sum(10,20,30);
+ sum(10,20,30,40); 
+}
+} 
+--output:-->60 100
+
+
+class Area 
+ {
+ int width,length,volume,height;
+ Area() 
+ {
+ width=5;
+ length=6;
+ }
+ void volume() 
+ {
+ volume = width*length*height;
+ } 
+ } 
+public class Test {
+public static void main(String[] args) {
+ Area obj = new Area();
+ obj.volume();
+ System.out.println(obj.volume); 
+}
+}
+--output:--> 0
