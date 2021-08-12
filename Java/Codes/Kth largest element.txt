@@ -1,0 +1,57 @@
+/*Minimize the sum
+
+Given an array of integers, perform atmost K operations 
+
+1.Consider an element at index y from the array.
+
+2.Replace arr[y] by floor(arr[y]/2).
+
+3.Find xth maximum element. 
+
+*/
+class Pair implements Comparable<Pair> {
+	int index, value;
+	Pair(int i, int val) {
+		index = i;
+		value = val;
+	}
+
+	// descending order of value
+	int compareTo(Pair p) {
+		return p.value - this.value;
+	}
+}
+// S - O(n)    T = O((n + k)logn + kn)
+class Main {
+	public static void main(String[] args)
+	{
+		// n = 8
+		int[] arr = {1 , 8, 9, 15, 19, -3, 80, 5};
+		int[] Y = {5, 4, 1, 2};
+		
+		xMax(arr, 4, Y, 6);
+	}
+	void xMax(int[] arr, int k, int[] Y, int x) {
+		TreeSet<Pair> ts = new TreeSet<>();
+		for(int i=0; i<arr.length; i++) // O(n logn)
+			ts.add(new Pair(i, arr[i]));
+
+
+		for(int i=0; i<k; i++) { // O(k * (n + logn))
+			int y = Y[i];
+			ts.remove(new Pair(y, arr[y])); // O(logn)
+			ts.add(new Pair(y,arr[y]/2); // O(logn)
+			int cnt = 0;
+			for(Pair p : ts) { // O(n)
+				cnt++;
+				if(cnt == x){
+					System.out.print(p.value + " ");
+					break;
+				}
+			}
+		}
+	}
+}
+// 10 9 8 7
+// x = 3 -> 8
+// cnt = 3

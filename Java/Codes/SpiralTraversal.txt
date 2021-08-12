@@ -1,0 +1,27 @@
+public int[] spiralOrder(final int[][] a) {
+        int i, k = 0, l = 0,c=0,m=a.length,n=a[0].length;
+        int ans[]=new int[m*n];
+        while (k < m && l < n) {
+            for (i = l; i < n; ++i) {
+                ans[c++]=a[k][i];
+            }
+            k++;
+            for (i = k; i < m; ++i) {
+                ans[c++]=a[i][n - 1];
+            }
+            n--;
+            if (k < m) {
+                for (i = n - 1; i >= l; --i) {
+                    ans[c++]=a[m - 1][i];
+                }
+                m--;
+            }
+            if (l < n) {
+                for (i = m - 1; i >= k; --i) {
+                    ans[c++]=a[i][l];
+                }
+                l++;
+            }
+        }
+        return ans;
+    }

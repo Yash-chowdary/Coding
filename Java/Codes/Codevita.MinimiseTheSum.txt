@@ -1,0 +1,34 @@
+/*Minimize the sum
+
+
+Given an array of integers, perform atmost K operations so that the sum of elements of final array is minimum. An operation is defined as follows -
+
+Consider any 1 element from the array, arr[i].
+
+Replace arr[i] by floor(arr[i]/2).
+
+Perform next operations on updated array.
+
+The task is to minimize the sum after utmost K operations. */
+
+
+PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+long sum=0;
+for(n)
+{
+	int y=sc.nextInt();
+	maxHeap.add(y);
+	sum+=y;
+}
+for(k)
+{
+	int x = maxHeap.peek();
+	maxHeap.delete(x);  //delete-logn
+	sum = sum - x;	    //Deleting from sum
+	x=x/2;
+	maxHeap.add(x);    //insert-logn
+	sum = sum + x;	   //Adding back to sum;
+}
+System.out.println(sum);
+

@@ -1,0 +1,27 @@
+
+// Find max(j-i) which satisfies A[i]<=A[j]
+// Find farthest element index which is less than or equal to its element
+
+public int maximumGap(final int[] A) 
+{
+        int n=A.length;
+        int a[]=new int[n];
+        a[n-1]=A[n-1];
+        for(int i=n-2;i>=0;i--)
+        {
+            a[i]=(int)Math.max(a[i+1],A[i]);
+        }
+        int i=0,j=0,ans=0;
+        while(i<n && j<n)
+        {
+            if(A[i]<=a[j])
+            {
+                ans=(int)Math.max(j-i,ans);
+                j++;
+            }
+            else i++;
+        }
+        return ans;
+}
+
+// T.C:-> O(N+N+N) || S.C:-> N 

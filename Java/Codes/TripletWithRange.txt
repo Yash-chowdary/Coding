@@ -1,0 +1,25 @@
+//Find whwther there exists a triplet which sum is in range(L,H) --> L<sum<H 
+
+public int solve(ArrayList<String> A,int L,int H) {
+        double a=Double.parseDouble(A.get(0));
+	double b=Double.parseDouble(A.get(1));
+	double c=Double.parseDouble(A.get(2));
+        for(int i=3;i<A.size();i++)
+        {
+            if(a+b+c>L && a+b+c<H) return 1;
+            if(a+b+c>=H)
+            {
+                if(a>b && a>c) a=Double.parseDouble(A.get(i));
+                else if(b>a && b>c) b=Double.parseDouble(A.get(i));
+                else c=Double.parseDouble(A.get(i));
+            }
+            else
+            {
+                if(a<b && a<c) a=Double.parseDouble(A.get(i));
+                else if(b<a && b<c) b=Double.parseDouble(A.get(i));
+                else c=Double.parseDouble(A.get(i));
+            }
+        }
+        if(a+b+c>L && a+b+c<H) return 1;
+        return 0;
+    }
