@@ -1,0 +1,31 @@
+
+.js/.jsx .jsx(js+html)
+.ts/.tsx
+
+-->>>Props
+--->>array.map
+---->js functions
+--->>Routing
+
+
+
+
+
+
+Coupons Hub(Fronend React UI + Backend ASP.Net Core Web API with SQL Server)
+----------------------------------------------------------------------------
+1. Available coupons list table
+	-> CouponId(PK), SectorName, CouponCode
+2. Users table
+	-> UserId(PK), Name, Mail Id, Password
+///////2. Unauthorised coupons list table
+
+Coupons of different sectors
+Only admin can add/approve coupons
+User -->can retrive a coupon
+     -->post a coupon to Unauthorised coupons list
+
+Login Page---> Mail Id, Password, Login btn, SignUp btn
+SignUp Page
+
+Navbar-->>> Home, SectorsDropDown, LogOut/(Login/SignUp)
